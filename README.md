@@ -1,0 +1,1 @@
+Small Spring core project
