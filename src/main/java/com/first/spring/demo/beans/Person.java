@@ -1,5 +1,7 @@
 package com.first.spring.demo.beans;
 
+import com.first.spring.demo.beans.animals.Animal;
+import com.first.spring.demo.beans.aop.Library;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component("personBean")
 public class Person {
     private Animal animal;
+    private Library library;
     @Value("${person.name}")
     private String name;
 
@@ -17,6 +20,15 @@ public class Person {
     @Qualifier("catBean")
     public void setAnimal(Animal animal) {
         this.animal = animal;
+    }
+
+    public Library getLibrary() {
+        return library;
+    }
+    @Autowired
+    @Qualifier("collegeLibrary")
+    public void setLibrary(Library library) {
+        this.library = library;
     }
 
     @PostConstruct

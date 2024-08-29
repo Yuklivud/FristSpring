@@ -1,15 +1,16 @@
-package com.first.spring.demo.beans;
+package com.first.spring.demo.beans.animals;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("dogBean")
-public class Dog implements Animal{
+@Component("catBean")
+public class Cat implements Animal {
     @Value("${animal.name}")
     private String name;
+
     @Override
     public void say() {
-        System.out.println("Wof wof wof");
+        System.out.println("Meow meow meow meow");
     }
 
     public String getName() {
